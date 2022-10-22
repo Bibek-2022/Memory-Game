@@ -2,25 +2,19 @@ import React from "react";
 import { Card } from "../component/Card";
 
 export const Game = () => {
+  const [cards, setCards] = React.useState([]);
   return (
     <div className="">
       <header>
-        <h3>Play the Flip card game</h3>
-        <div>
-          Select two cards with same content consequtively to make them vanish
-        </div>
+        <h3>Memory Game</h3>
       </header>
       <div className="container">
-        {cards.map((card, index) => {
-          return (
-            <Card
-              key={index}
-              card={card}
-              index={index}
-              onClick={handleCardClick}
-            />
-          );
-        })}
+        <Card
+        // key={index}
+        // card={card}
+        // index={index}
+        // onClick={handleCardClick}
+        />
       </div>
     </div>
   );
