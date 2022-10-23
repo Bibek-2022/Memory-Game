@@ -1,65 +1,75 @@
-/* .card {
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
-  box-shadow: 2px 2px 4px 4px #dedede;
-  transition: 0.3s;
-  transform-style: preserve-3d;
+.flipCard {
+  -webkit-perspective: 800;
+  -ms-perspective: 800;
+  -moz-perspective: 800;
+  -o-perspective: 800;
+  width: 400px;
+  height: 200px;
   position: relative;
-  cursor: pointer;
+  margin: 50px auto;
 }
-.card img {
-  width: 95%;
-  height: 95%;
+.flipCard .card.flipped {
+  transform: rotatey(-180deg);
+  -ms-transform: rotatey(-180deg); /* IE 9 */
+  -moz-transform: rotatey(-180deg); /* Firefox */
+  -webkit-transform: rotatey(-180deg); /* Safari and Chrome */
+  -o-transform: rotatey(-180deg); /* Opera */
 }
-.card .card-face {
-  backface-visibility: hidden;
-  position: absolute;
+.flipCard .card {
   width: 100%;
   height: 100%;
-}
-.card .card-face.card-back-face {
-  transform: rotateY(180deg);
-}
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-.card.is-inactive {
-  opacity: 0;
-} */
-
-/* Path: src\component\card.css */
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
-  box-shadow: 2px 2px 4px 4px #dedede;
-  transition: 0.3s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  -moz-transform-style: preserve-3d;
+  -moz-transition: 0.5s;
+  -ms-transform-style: preserve-3d;
+  -ms-transition: 0.5s;
+  -o-transform-style: preserve-3d;
+  -o-transition: 0.5s;
   transform-style: preserve-3d;
-  position: relative;
-  cursor: pointer;
+  transition: 0.5s;
 }
-
-img {
-  width: 300px;
-  height: 400px;
-}
-
-.card .card-face {
-  backface-visibility: hidden;
-  position: absolute;
+.flipCard .card .side {
   width: 100%;
   height: 100%;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 2;
+  backface-visibility: hidden; /* W3C */
+  -webkit-backface-visibility: hidden; /* Safari & Chrome */
+  -moz-backface-visibility: hidden; /* Firefox */
+  -ms-backface-visibility: hidden; /* Internet Explorer */
+  -o-backface-visibility: hidden; /* Opera */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  overflow: auto;
+}
+.flipCard .card .back {
+  background: white;
+  color: black;
+  transform: rotatey(-180deg);
+  -ms-transform: rotatey(-180deg); /* IE 9 */
+  -moz-transform: rotatey(-180deg); /* Firefox */
+  -webkit-transform: rotatey(-180deg); /* Safari and Chrome */
+  -o-transform: rotatey(-180deg); /* Opera */
 }
 
-.card .card-face.card-back-face {
-  transform: rotateY(180deg);
+.flipCard .card .front {
+  font-family: Georgia;
+  font-size: 3em;
+  text-align: center;
+  line-height: 160px;
+  background-color: #7030a0;
+  border: 3px solid white;
+  color: white;
 }
-
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.card.is-inactive {
-  opacity: 0;
+.flipCard .card .back {
+  background-color: #dbb2f9;
+  border: 3px solid white;
+  text-align: center;
+  color: black;
+  padding-top: 50px;
+  font-family: Georgia;
+  font-size: 2em;
 }
