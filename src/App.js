@@ -1,11 +1,10 @@
-import "./App.css";
-import { Game } from "./pages/Game";
+import Cards from './components/Cards'
 
 function App() {
   return (
     <div className="App">
-      <h1>React Flip Card Game</h1>
-      <Game />
+      <h1>Memory Game - React</h1>
+      <Cards />
     </div>
   );
 }
